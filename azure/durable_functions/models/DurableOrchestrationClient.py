@@ -545,9 +545,9 @@ class DurableOrchestrationClient:
                                        task_hub_name=task_hub_name,
                                        entity_Id=entityId)
 
-        logging.info(self._orchestration_bindings.rpc_base_url)
+        print(self._orchestration_bindings.rpc_base_url)
         request_url = options.to_url(self._orchestration_bindings.rpc_base_url)
-        logging.info(request_url)
+        print(request_url)
         response = await self._post_async_request(
             request_url,
             json.dumps(operation_input) if operation_input else None)
