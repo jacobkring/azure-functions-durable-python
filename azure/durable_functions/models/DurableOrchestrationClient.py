@@ -547,7 +547,7 @@ class DurableOrchestrationClient:
 
         print(self._orchestration_bindings.rpc_base_url)
         request_url = options.to_url(self._orchestration_bindings.rpc_base_url)
-        print(request_url)
+        raise Exception(request_url)
         response = await self._post_async_request(
             request_url,
             json.dumps(operation_input) if operation_input else None)
