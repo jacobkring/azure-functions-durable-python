@@ -15,9 +15,6 @@ import json
 from pathlib import Path
 import sys
 import warnings
-import logging
-
-logging.info("HELLO")
 
 def validate_extension_bundles():
     """Raise a warning if host.json contains bundle-range V1.
@@ -40,7 +37,9 @@ def validate_extension_bundles():
         return
 
     with open(host_path) as f:
-        host_settings = json.loads(f.read())
+        r = f.read()
+        print(r)
+        host_settings = json.loads(r)
         try:
             version_range = host_settings[bundles_key][version_key]
         except Exception:
